@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-15">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        html,body{
+            height: 100%;
+            background-color: blueviolet;
+            zoom: 108%;
+        }
+        html{
+            display: table;
+            margin: auto;
+        }
+        body{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .boxB{
+            background-color: rgb(76, 138, 92);
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            font-size: 40px;
+            color: rgb(37, 0, 170);   
+            font-weight: bolder;
+            font-weight: 900;
+            border: 1px;
+            border-color:rgb(76, 138, 92);
+            border-style: solid;
+        }
+        .boxW{
+            background-color: rgb(206, 255, 218);
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            font-size: 40px;
+            color: rgb(37, 0, 170);
+            font-weight: bolder; 
+            font-weight: 900;
+            border: 1px;
+            border-color:rgb(206, 255, 218);
+            border-style: solid;
+        }
+        .out{
+            width: 30px;
+            height: 60px;
+            vertical-align: middle;
+            background-color: rgb(60, 44, 22);
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px;
+            border-color:rgb(90, 67, 33);
+            border-style: solid
+        }
+        .out2{
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            background-color: rgb(60, 44, 22);
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px;
+            border-color:rgb(90, 67, 33);
+            border-style: solid
+        }
+        .out3{
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            background-color: rgb(60, 44, 22);
+            color: rgb(255, 255, 255);
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px;
+            border-color:rgb(58, 43, 21);
+            border-style: solid
+        }
+    </style>
+
+        <button class="out3" id="90" disabled></button><button class="out2" id="91" disabled>1</button><button class="out2"  id="92" disabled>2</button><button class="out2"  id="93" disabled>3</button><button class="out2"  id="94" disabled>4</button><button class="out2"  id="95" disabled>5</button><button class="out2"  id="96" disabled>6</button><button class="out2"  id="97" disabled>7</button><button class="out2"  id="98" disabled>8</button><button class="out3" id="99" disabled></button><br>
+        <button class="out" id="80" disabled>8</button><button class="boxB" id="81" onclick="Detect(this.id)">♜</button><button class="boxW" id="82" onclick="Detect(this.id)">♞</button><button class="boxB" id="83" onclick="Detect(this.id)">♝</button><button class="boxW" id="84" onclick="Detect(this.id)">♛<button class="boxB" id="85" onclick="Detect(this.id)">♚</button><button class="boxW" id="86" onclick="Detect(this.id)">♝</button><button class="boxB" id="87" onclick="Detect(this.id)">♞</button><button class="boxW" id="88" onclick="Detect(this.id)">♜</button><button class="out" id="89" disabled>8</button><br>
+        <button class="out" id="70" disabled>7</button><button class="boxW" id="71" onclick="Detect(this.id)">♟</button><button class="boxB" id="72" onclick="Detect(this.id)">♟</button><button class="boxW" id="73" onclick="Detect(this.id)">♟</button><button class="boxB" id="74" onclick="Detect(this.id)">♟<button class="boxW" id="75" onclick="Detect(this.id)">♟</button><button class="boxB" id="76" onclick="Detect(this.id)">♟</button><button class="boxW" id="77" onclick="Detect(this.id)">♟</button><button class="boxB" id="78" onclick="Detect(this.id)">♟</button><button class="out" id="79" disabled>7</button><br>
+        <button class="out" id="60" disabled>6</button><button class="boxB" id="61" onclick="Detect(this.id)"></button><button class="boxW" id="62" onclick="Detect(this.id)"></button><button class="boxB" id="63" onclick="Detect(this.id)"></button><button class="boxW" id="64" onclick="Detect(this.id)"><button class="boxB" id="65" onclick="Detect(this.id)"></button><button class="boxW" id="66" onclick="Detect(this.id)"></button><button class="boxB" id="67" onclick="Detect(this.id)"></button><button class="boxW" id="68" onclick="Detect(this.id)"></button><button class="out" id="69" disabled>6</button><br>
+        <button class="out" id="50" disabled>5</button><button class="boxW" id="51" onclick="Detect(this.id)"></button><button class="boxB" id="52" onclick="Detect(this.id)"></button><button class="boxW" id="53" onclick="Detect(this.id)"></button><button class="boxB" id="54" onclick="Detect(this.id)"><button class="boxW" id="55" onclick="Detect(this.id)"></button><button class="boxB" id="56" onclick="Detect(this.id)"></button><button class="boxW" id="57" onclick="Detect(this.id)"></button><button class="boxB" id="58" onclick="Detect(this.id)"></button><button class="out" id="59" disabled>5</button><br>
+        <button class="out" id="40" disabled>4</button><button class="boxB" id="41" onclick="Detect(this.id)"></button><button class="boxW" id="42" onclick="Detect(this.id)"></button><button class="boxB" id="43" onclick="Detect(this.id)"></button><button class="boxW" id="44" onclick="Detect(this.id)"><button class="boxB" id="45" onclick="Detect(this.id)"></button><button class="boxW" id="46" onclick="Detect(this.id)"></button><button class="boxB" id="47" onclick="Detect(this.id)"></button><button class="boxW" id="48" onclick="Detect(this.id)"></button><button class="out" id="49" disabled>4</button><br>
+        <button class="out" id="30" disabled>3</button><button class="boxW" id="31" onclick="Detect(this.id)"></button><button class="boxB" id="32" onclick="Detect(this.id)"></button><button class="boxW" id="33" onclick="Detect(this.id)"></button><button class="boxB" id="34" onclick="Detect(this.id)"><button class="boxW" id="35" onclick="Detect(this.id)"></button><button class="boxB" id="36" onclick="Detect(this.id)"></button><button class="boxW" id="37" onclick="Detect(this.id)"></button><button class="boxB" id="38" onclick="Detect(this.id)"></button><button class="out" id="39" disabled>3</button><br>
+        <button class="out" id="20" disabled>2</button><button class="boxB" id="21" onclick="Detect(this.id)">♙</button><button class="boxW" id="22" onclick="Detect(this.id)">♙</button><button class="boxB" id="23" onclick="Detect(this.id)">♙</button><button class="boxW" id="24" onclick="Detect(this.id)">♙<button class="boxB" id="25" onclick="Detect(this.id)">♙</button><button class="boxW" id="26" onclick="Detect(this.id)">♙</button><button class="boxB" id="27" onclick="Detect(this.id)">♙</button><button class="boxW" id="28" onclick="Detect(this.id)">♙</button><button class="out" id="29" disabled>2</button><br>
+        <button class="out" id="10" >1</button><button class="boxW" id="11" onclick="Detect(this.id)">♖</button><button class="boxB" id="12" onclick="Detect(this.id)">♘</button><button class="boxW" id="13" onclick="Detect(this.id)">♗</button><button class="boxB" id="14" onclick="Detect(this.id)">♕<button class="boxW" id="15" onclick="Detect(this.id)">♔</button><button class="boxB" id="16" onclick="Detect(this.id)">♗</button><button class="boxW" id="17" onclick="Detect(this.id)">♘</button><button class="boxB" id="18" onclick="Detect(this.id)">♖</button><button class="out" id="19" disabled>1</button><br>
+        <button class="out3" id="0" ></button><button class="out2" id="1" disabled>A</button><button class="out2" id="2" disabled>B</button><button class="out2" id="3" disabled>C</button><button class="out2" id="4" disabled>D</button><button class="out2" id="5" disabled>E</button><button class="out2" id="6" disabled>F</button><button class="out2" id="7" disabled>G</button><button class="out2" id="8" disabled>H</button><button class="out3" id="9" disabled></button>
+
+        <script>
+            Color()
+            var previousPiece
+            var selectedPiece
+            var player = true
+            var isWhite
+
+            function Detect(n){
+                n = parseInt(n)
+
+                switch (true){
+                    case document.getElementById(n).innerHTML == '♙' && player == true || selectedPiece == '♙':
+                        Peao(n)
+                        
+                        break
+                    case document.getElementById(n).innerHTML == '♟' && player == false || selectedPiece == '♟':
+                        Peao(n)
+                        break
+
+                    case document.getElementById(n).innerHTML == '♖' && player == true || selectedPiece == '♖':
+                        Torre(n)
+                        break
+                    case document.getElementById(n).innerHTML == '♜' && player == false || selectedPiece == '♜':
+                        Torre(n)
+                        break
+
+                    case document.getElementById(n).innerHTML == '♗' && player == true || selectedPiece == '♗':
+                        Bispo(n)
+                        break
+                    case document.getElementById(n).innerHTML == '♝' && player == false || selectedPiece == '♝':
+                        Bispo(n)
+                        break
+
+                    case document.getElementById(n).innerHTML == '♘' && player == true || selectedPiece == '♘':
+                        Cavalo(n)
+                        break
+                    case document.getElementById(n).innerHTML == '♞' && player == false || selectedPiece == '♞':
+                        Cavalo(n)
+                        break
+
+                    case document.getElementById(n).innerHTML == '♔' && player == true || selectedPiece == '♔':
+                        Rainha(n)
+                        break
+                    case document.getElementById(n).innerHTML == '♚' && player == false || selectedPiece == '♚':
+                        Rainha(n)
+                        break
+                    case document.getElementById(n).innerHTML == '♕' && player == true || selectedPiece == '♕':
+                        Rei(n)
+                        break
+                    case document.getElementById(n).innerHTML == '♛' && player == false || selectedPiece == '♛':
+                        Rei(n)
+                        break
+                }
+            }
+            function Peao(n){    
+                if(player == true && parseInt(n/10) == 2 && selectedPiece == null){
+                    MoveLine(n+10, n)
+                    if(document.getElementById(n+10).innerHTML == ''){
+                        MoveLine(n+20, n)
+                    }
+                    Attack(n+10+1, n)
+                    Attack(n+10-1, n)
+                    previousPiece = n
+                    return
+                }
+                else if(player == true && selectedPiece == null){
+                    MoveLine(n+10, n)
+                    Attack(n+10+1, n)
+                    Attack(n+10-1, n)
+                    previousPiece = n
+                    return
+                }
+                if(player == false && parseInt(n/10) == 7 && selectedPiece == null){
+                    MoveLine(n-10, n)
+                    if(document.getElementById(n-10).innerHTML == ''){
+                        MoveLine(n-20, n)
+                    }
+                    Attack(n-10+1, n)
+                    Attack(n-10-1, n)
+                    previousPiece = n
+                    return
+                }
+                else if(player == false && selectedPiece == null){
+                    MoveLine(n-10, n)
+                    Attack(n-10+1, n)
+                    Attack(n-10-1, n)
+                    previousPiece = n
+                    return
+                }
+                if(document.getElementById(n).style.backgroundColor == 'khaki'){
+                    Move(n)
+                    return
+                }
+
+                if(selectedPiece != null && document.getElementById(n).style.backgroundColor == ''){
+                    CancelMove(n)
+                } 
+            }
+            function Torre(n){
+                if(player == true && selectedPiece == null){
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n+i, n)
+                        if(parseInt((n+i)%10) == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n-i, n)
+                        if(n-i < 11){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n+i, n)
+                        if((n+i)%10 == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n-i, n)
+                        if((n-i)%10 == 0){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    previousPiece = n
+                    return
+                }
+
+                if(player == false && selectedPiece == null){
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n+i, n)
+                        if(parseInt((n+i)%10) == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n-i, n)
+                        if(n-i < 11){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n+i, n)
+                        if((n+i)%10 == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n-i, n)
+                        if((n-i)%10 == 0){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    previousPiece = n
+                    return
+                }
+                
+                if(document.getElementById(n).style.backgroundColor == 'khaki'){
+                    Move(n)
+                    return
+                }
+
+                if(selectedPiece != null && document.getElementById(n).style.backgroundColor == ''){
+                    CancelMove(n)
+                }
+            }
+            function Bispo(n){
+                if(player == true && selectedPiece == null){
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n+i,n)
+                        if((n+i)%10 == 9 && n+i > 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n+i,n)
+                        if((n+i)%10 == 0 && n+i < 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 0 && n-i < 8){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 9 && n-i <= 9){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    previousPiece = n
+                    return
+                }
+                if(player == false && selectedPiece == null){
+
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n+i,n)
+                        if((n+i)%10 == 9 && n+i > 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n+i,n)
+                        if((n+i)%10 == 0 && n+i < 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 0 && n-i < 8){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 9 && n-i <= 9){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    previousPiece = n
+                    return
+                }
+                if(document.getElementById(n).style.backgroundColor == 'khaki'){
+                    Move(n)
+                    return
+                }
+
+                if(selectedPiece != null && document.getElementById(n).style.backgroundColor == ''){
+                    CancelMove(n)
+                }
+            }
+            function Cavalo(n){
+                if(player == true && selectedPiece == null){
+                    MoveLine(n+21,n)
+                    MoveLine(n+19,n)
+                    MoveLine(n+12,n)
+                    MoveLine(n+8,n)
+                    MoveLine(n-21,n)
+                    MoveLine(n-19,n)
+                    MoveLine(n-12,n)
+                    MoveLine(n-8,n)
+                    Attack(n+21,n)
+                    Attack(n+19,n)
+                    Attack(n+12,n)
+                    Attack(n+8,n)
+                    Attack(n-21,n)
+                    Attack(n-19,n)
+                    Attack(n-12,n)
+                    Attack(n-8,n)
+                    previousPiece = n
+                    return
+                }
+                if(player == false && selectedPiece == null){
+                    MoveLine(n+21,n)
+                    MoveLine(n+19,n)
+                    MoveLine(n+12,n)
+                    MoveLine(n+8,n)
+                    MoveLine(n-21,n)
+                    MoveLine(n-19,n)
+                    MoveLine(n-12,n)
+                    MoveLine(n-8,n)
+                    Attack(n+21,n)
+                    Attack(n+19,n)
+                    Attack(n+12,n)
+                    Attack(n+8,n)
+                    Attack(n-21,n)
+                    Attack(n-19,n)
+                    Attack(n-12,n)
+                    Attack(n-8,n)
+                    previousPiece = n
+                    return
+                }
+                if(document.getElementById(n).style.backgroundColor == 'khaki'){
+                    Move(n)
+                    return
+                }
+
+                if(selectedPiece != null && document.getElementById(n).style.backgroundColor == ''){
+                    CancelMove(n)
+                }
+
+            }
+            function Rainha(n){
+                if(player == true && selectedPiece == null){
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n+i, n)
+                        if(parseInt((n+i)%10) == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n-i, n)
+                        if(n-i < 11){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n+i, n)
+                        if((n+i)%10 == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n-i, n)
+                        if((n-i)%10 == 0){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n+i,n)
+                        if((n+i)%10 == 9 && n+i > 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n+i,n)
+
+                        if((n+i)%10 == 0 && n+i < 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 0 && n-i < 9){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 9 && n-i > 8){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    previousPiece = n
+                    return
+                }
+                if(player == false && selectedPiece == null){
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n+i, n)
+                        if(parseInt((n+i)%10) == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 10; i <= 70; i+=10){
+                        MoveLine(n-i, n)
+                        if(n-i < 11){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n+i, n)
+                        if((n+i)%10 == 9){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i, n)
+                            break
+                        }
+                    }
+                    for(var i = 1; i <= 7; i+=1){
+                        MoveLine(n-i, n)
+                        if((n-i)%10 == 0){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i, n)
+                            break
+                        }
+                    }
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n+i,n)
+                        if((n+i)%10 == 9 && n+i > 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n+i,n)
+                        if((n+i)%10 == 0 && n+i < 91){
+                            break
+                        }
+                        if(document.getElementById(n+i).innerHTML != ''){
+                            Attack(n+i,n)
+                            break
+                        }
+                    }
+                    for(var i = 11; i <= 88; i+=11){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 0 && n-i < 9){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    for(var i = 9; i <= 88; i+=9){
+                        MoveLine(n-i,n)
+                        if((n-i)%10 == 9 && n-i <= 9){
+                            break
+                        }
+                        if(document.getElementById(n-i).innerHTML != ''){
+                            Attack(n-i,n)
+                            break
+                        }
+                    }
+                    previousPiece = n
+                    return
+                }
+                if(document.getElementById(n).style.backgroundColor == 'khaki'){
+                    Move(n)
+                    return
+                }
+                if(selectedPiece != null && document.getElementById(n).style.backgroundColor == ''){
+                    CancelMove(n)
+                }
+            }
+            function Rei(n){
+                if(player == true && selectedPiece == null){
+                    MoveLine(n+11,n)
+                    MoveLine(n+10,n)
+                    MoveLine(n+9,n)
+                    MoveLine(n+1,n)
+                    MoveLine(n-1,n)
+                    MoveLine(n-9,n)
+                    MoveLine(n-10,n)
+                    MoveLine(n-11,n)
+                    Attack(n+11,n)
+                    Attack(n+10,n)
+                    Attack(n+9,n)
+                    Attack(n+1,n)
+                    Attack(n-1,n)
+                    Attack(n-9,n)
+                    Attack(n-10,n)
+                    Attack(n-11,n)
+                    previousPiece = n
+                    return
+                }
+                if(player == false && selectedPiece == null){
+                    MoveLine(n+11,n)
+                    MoveLine(n+10,n)
+                    MoveLine(n+9,n)
+                    MoveLine(n+1,n)
+                    MoveLine(n-1,n)
+                    MoveLine(n-9,n)
+                    MoveLine(n-10,n)
+                    MoveLine(n-11,n)
+                    Attack(n+11,n)
+                    Attack(n+10,n)
+                    Attack(n+9,n)
+                    Attack(n+1,n)
+                    Attack(n-1,n)
+                    Attack(n-9,n)
+                    Attack(n-10,n)
+                    Attack(n-11,n)
+                    previousPiece = n
+                    return
+                }
+                if(document.getElementById(n).style.backgroundColor == 'khaki'){
+                    Move(n)
+                    return
+                }
+                if(selectedPiece != null && document.getElementById(n).style.backgroundColor == ''){
+                    CancelMove(n)
+                }
+            }
+            function MoveLine(move,n){ 
+                if(move < 89 && move > 10 && (move%10) >= 1 && (move%10) <= 8 && document.getElementById(move).innerHTML == ''){
+                    document.getElementById(move).style.backgroundColor = 'khaki'
+                    previousPosition = n
+                    if(document.getElementById(n).innerHTML == '♙'){
+                        selectedPiece = '♙'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♟'){
+                        selectedPiece = '♟'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♖'){
+                        selectedPiece = '♖'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♜'){
+                        selectedPiece = '♜'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♗'){
+                        selectedPiece = '♗'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♝'){
+                        selectedPiece = '♝'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♘'){
+                        selectedPiece = '♘'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♞'){
+                        selectedPiece = '♞'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♔'){
+                        selectedPiece = '♔'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♚'){
+                        selectedPiece = '♚'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♕'){
+                        selectedPiece = '♕'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♛'){
+                        selectedPiece = '♛'
+                    }
+                }
+            }
+            function Move(n){
+                if(document.getElementById(n).innerHTML == '♕'){
+                    alert('Jogador Marrom venceu')
+                    window.location.reload()
+                }
+                if(document.getElementById(n).innerHTML == '♛'){
+                    alert('Jogador Azul venceu')
+                    window.location.reload()
+                }
+                document.getElementById(n).innerHTML = document.getElementById(previousPiece).innerHTML
+                document.getElementById(previousPiece).innerHTML = ''
+                Color()
+                movedPiece = selectedPiece
+                
+
+                if(player == true){
+                    player = false
+                }
+                else{
+                    player = true
+                }
+                CancelMove(n)
+            }
+            function Attack(move, n){
+                isWhite = null
+                if(move < 89 && move > 10 && (move%10) < 9 && (move%10) > 0 && document.getElementById(move).innerHTML != ''){
+                    CheckPieceType(document.getElementById(move).innerHTML)
+                    if(document.getElementById(n).innerHTML == '♙'){
+                        selectedPiece = '♙'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♟'){
+                        selectedPiece = '♟'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♖'){
+                        selectedPiece = '♖'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♜'){
+                        selectedPiece = '♜'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♗'){
+                        selectedPiece = '♗'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♝'){
+                        selectedPiece = '♝'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♘'){
+                        selectedPiece = '♘'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♞'){
+                        selectedPiece = '♞'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♔'){
+                        selectedPiece = '♔'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♚'){
+                        selectedPiece = '♚'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♕'){
+                        selectedPiece = '♕'
+                    }
+                    else if(document.getElementById(n).innerHTML == '♛'){
+                        selectedPiece = '♛'
+                    }
+                }
+                if(player == true && isWhite == false){
+                    document.getElementById(move).style.backgroundColor = 'khaki'
+                    isWhite = null
+                }
+                if(player == false && isWhite == true){
+                    document.getElementById(move).style.backgroundColor = 'khaki'
+                    isWhite = null
+                }
+            }
+            function CancelMove(n){
+                for(var i=11; i <= 88; i++){
+                    if((i%10) == 8 && i < 88){
+                        document.getElementById(i).style.backgroundColor = ''
+                        i += 3
+                    }
+                    document.getElementById(i).style.backgroundColor = ''
+                }
+                selectedPiece = null
+            }
+            function CheckPieceType(pieceType){
+                switch(pieceType){
+                    case '♚': case '♛': case '♜': case '♝': case '♞': case '♟':
+                        isWhite = false
+                        break
+                    case '♔': case '♕': case '♖': case '♗': case '♘': case '♙':
+                        isWhite = true
+                }
+            }
+            function Color(){
+                for(var i=11; i <= 88; i++){
+                    if((i%10) == 8 && i < 88){
+                        switch(document.getElementById(i).innerHTML){
+                            case '♚': case '♛': case '♜': case '♝': case '♞': case '♟':
+                                document.getElementById(i).style.color = 'rgb(131, 74, 0)'
+                                document.getElementById(i).style.fontWeight = '400'
+                                break
+                            case '♔': case '♕': case '♖': case '♗': case '♘': case '♙':
+                                document.getElementById(i).style.color = ''
+                                document.getElementById(i).style.fontWeight = ''
+                        }
+                        i += 3
+                    }
+                    switch(document.getElementById(i).innerHTML){
+                        case '♚': case '♛': case '♜': case '♝': case '♞': case '♟':
+                            document.getElementById(i).style.color = 'rgb(131, 74, 0)'
+                            document.getElementById(i).style.fontWeight = '400'
+                            break
+                        case '♔': case '♕': case '♖': case '♗': case '♘': case '♙':
+                            document.getElementById(i).style.color = ''
+                            document.getElementById(i).style.fontWeight = ''
+                    }
+                }
+            }
+
+
+    </script>
+
+
+</body>
+</html>
